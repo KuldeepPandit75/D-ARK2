@@ -1,0 +1,182 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  margin-top: 100px;
+  flex: 1;
+  padding: 2rem 0;
+  background: linear-gradient(
+    to bottom,
+    var(--background-start),
+    var(--background-end)
+  );
+}
+
+.mintHeader {
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #fff, var(--accent-primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.formContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.form {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.uploadSection {
+  margin-bottom: 2rem;
+}
+
+.uploadArea {
+  border: 2px dashed rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.uploadArea:hover {
+  border-color: var(--accent-primary);
+}
+
+.uploadLabel {
+  cursor: pointer;
+  display: block;
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadContent {
+  color: var(--text-secondary);
+}
+
+.uploadContent i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--accent-primary);
+}
+
+.previewContainer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inputGroup label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.input, .textarea {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.input:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+.input:disabled, .textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.mintButton {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mintButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+}
+
+.mintButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .form {
+    padding: 1.5rem;
+  }
+  
+  .previewContainer {
+    width: 250px;
+    height: 250px;
+  }
+}
