@@ -68,7 +68,7 @@ body::after {
   margin:0;
 }
 
-body{
+#game-container{
 overflow:hidden;
 }
 
