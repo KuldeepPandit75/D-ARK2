@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 
 const GameApp = dynamic(
-  () => import('../../../../D-ARK/frontend/src/app/App.jsx'),
+  () => import('../components/meta/Meta.jsx'),
   { 
     ssr: false,
     loading: () => <div>Loading game...</div>

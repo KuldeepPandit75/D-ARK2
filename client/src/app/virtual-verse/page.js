@@ -1,6 +1,8 @@
 "use client";
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
+import { Provider } from 'react-redux';
+import store from '../store.js';
 
 // Custom error boundary component
 function ErrorFallback({ error }) {
@@ -29,7 +31,7 @@ function LoadingFallback() {
 
 // Dynamically import the game component
 const GameApp = dynamic(
-    () => import('@dark/App.jsx').catch(err => {
+    () => import('../components/meta/Meta.jsx').catch(err => {
         console.error("Failed to load game:", err);
         return () => <ErrorFallback error={err} />;
     }),
@@ -41,10 +43,13 @@ const GameApp = dynamic(
 
 export default function VirtualVersePage() {
     return (
+        <Provider store={store}>
+
         <Suspense fallback={<LoadingFallback />}>
             <div style={{ width: '100vw', height: '100vh' }}>
                 <GameApp />
             </div>
         </Suspense>
+        </Provider>
     );
 }
